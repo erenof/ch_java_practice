@@ -1,14 +1,15 @@
-CREATE TABLE client(
-                       id INTEGER PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE customer(
+                       customer_id INTEGER PRIMARY KEY AUTO_INCREMENT,
                        name VARCHAR(75) NOT NULL,
-                       lastname VARCHAR(75) NOT NULL,
-                       docnumber VARCHAR(11) UNIQUE NOT NULL
+                       email VARCHAR(75) NOT NULL,
+                       address VARCHAR(75) NOT NULL,
+                       dni INTEGER UNIQUE NOT NULL
 );
 
 CREATE TABLE product(
-                        id INTEGER PRIMARY KEY AUTO_INCREMENT,
-                        description VARCHAR(150),
-                        code VARCHAR(50) UNIQUE NOT NULL,
-                        stock INTEGER,
-                        price DOUBLE
+                        product_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+                        product_name VARCHAR(150),
+                        product_description VARCHAR(150),
+                        price INTEGER,
+                        stock INTEGER
 );
