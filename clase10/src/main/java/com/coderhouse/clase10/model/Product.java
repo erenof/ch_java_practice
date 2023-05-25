@@ -1,4 +1,4 @@
-package com.coderhouse.clase9.workshop.model;
+package com.coderhouse.clase10.model;
 
 import jakarta.persistence.*;
 
@@ -9,9 +9,12 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String description;
     private String code;
+
     private double price;
+
     private int stock;
 
     // getter y setter
@@ -55,7 +58,7 @@ public class Product {
         this.stock = stock;
     }
 
-    //tostring
+    // tostring
     @Override
     public String toString() {
         return "Product{" +

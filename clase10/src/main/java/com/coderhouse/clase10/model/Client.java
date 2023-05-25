@@ -1,4 +1,4 @@
-package com.coderhouse.clase9.workshop.model;
+package com.coderhouse.clase10.model;
 
 import jakarta.persistence.*;
 
@@ -15,11 +15,10 @@ public class Client {
     private String lastname;
     private String docnumber;
 
-    //Relacion un cliente muchas facturas, usamos OnetoMany
     @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
     private List<Invoice> invoice;
 
-    //Getter y setter
+    // getter y setter
     public int getId() {
         return id;
     }
@@ -60,6 +59,7 @@ public class Client {
         this.invoice = invoice;
     }
 
+    // tostring
     @Override
     public String toString() {
         return "Client{" +
@@ -67,30 +67,7 @@ public class Client {
                 ", name='" + name + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", docnumber='" + docnumber + '\'' +
+                ", invoice=" + invoice +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Client client)) return false;
-
-        if (getId() != client.getId()) return false;
-        if (getName() != null ? !getName().equals(client.getName()) : client.getName() != null) return false;
-        if (getLastname() != null ? !getLastname().equals(client.getLastname()) : client.getLastname() != null)
-            return false;
-        if (getDocnumber() != null ? !getDocnumber().equals(client.getDocnumber()) : client.getDocnumber() != null)
-            return false;
-        return getInvoice() != null ? getInvoice().equals(client.getInvoice()) : client.getInvoice() == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = getId();
-        result = 31 * result + (getName() != null ? getName().hashCode() : 0);
-        result = 31 * result + (getLastname() != null ? getLastname().hashCode() : 0);
-        result = 31 * result + (getDocnumber() != null ? getDocnumber().hashCode() : 0);
-        result = 31 * result + (getInvoice() != null ? getInvoice().hashCode() : 0);
-        return result;
     }
 }
