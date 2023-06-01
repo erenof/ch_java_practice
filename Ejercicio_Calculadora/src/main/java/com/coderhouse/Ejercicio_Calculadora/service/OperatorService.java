@@ -15,4 +15,15 @@ public class OperatorService {
     public Operator postOperator(Operator operator) throws Exception {
         return operatorRepository.save(operator);
     }
+
+    public Operator postAdditionOperator(Operator operator) throws Exception {
+
+        int numero1 = operator.getFirstNumber();
+        int numero2 = operator.getSecondNumber();
+        int result = numero1 + numero2;
+
+        operator.setResult(result);
+
+        return operatorRepository.save(operator);
+    }
 }

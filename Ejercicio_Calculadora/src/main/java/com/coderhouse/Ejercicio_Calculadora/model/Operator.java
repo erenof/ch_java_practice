@@ -9,37 +9,45 @@ public class Operator {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int num1;
 
-    private int num2;
+    private int firstNumber;
 
-    private String operator;
+    private int secondNumber;
+    private String operatorType;
 
     private int result;
 
-    // getter and setter
-    public int getNum1() {
-        return num1;
+    // getter y setter
+    public int getId() {
+        return id;
     }
 
-    public void setNum1(int num1) {
-        this.num1 = num1;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getNum2() {
-        return num2;
+    public int getFirstNumber() {
+        return firstNumber;
     }
 
-    public void setNum2(int num2) {
-        this.num2 = num2;
+    public void setFirstNumber(int firstNumber) {
+        this.firstNumber = firstNumber;
     }
 
-    public String getOperator() {
-        return operator;
+    public int getSecondNumber() {
+        return secondNumber;
     }
 
-    public void setOperator(String operator) {
-        this.operator = operator;
+    public void setSecondNumber(int secondNumber) {
+        this.secondNumber = secondNumber;
+    }
+
+    public String getOperatorType() {
+        return operatorType;
+    }
+
+    public void setOperatorType(String operatorType) {
+        this.operatorType = operatorType;
     }
 
     public int getResult() {
@@ -50,13 +58,15 @@ public class Operator {
         this.result = result;
     }
 
-    // toString method
+    // tostring
+
     @Override
     public String toString() {
         return "Operator{" +
-                "num1=" + num1 +
-                ", num2=" + num2 +
-                ", operator='" + operator + '\'' +
+                "id=" + id +
+                ", firstNumber=" + firstNumber +
+                ", secondNumber=" + secondNumber +
+                ", operatorType='" + operatorType + '\'' +
                 ", result=" + result +
                 '}';
     }
