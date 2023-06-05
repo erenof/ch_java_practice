@@ -27,8 +27,14 @@ public class OperatorController {
 
     // Addition, pasando los parametros por el json
     @PostMapping(path = "/operators/addition")
-    public Operator postOperator(@RequestBody Operator operator) throws Exception {
+    public Operator postAdditionOperator(@RequestBody Operator operator) throws Exception {
         return operatorService.postAdditionOperator(operator);
+    }
+
+    // Sustraction, pasando parametros por el json
+    @PostMapping(path = "operators/subtraction")
+    public Operator postSubtractionOperator(@RequestBody Operator operator) throws Exception {
+        return operatorService.postSubtractionOperator(operator);
     }
 
     @GetMapping(path = "/operators/{id}")

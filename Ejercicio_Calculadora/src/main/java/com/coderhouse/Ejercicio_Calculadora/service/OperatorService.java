@@ -16,11 +16,24 @@ public class OperatorService {
         return operatorRepository.save(operator);
     }
 
+    // Post Addition
     public Operator postAdditionOperator(Operator operator) throws Exception {
 
         int numero1 = operator.getFirstNumber();
         int numero2 = operator.getSecondNumber();
         int result = numero1 + numero2;
+
+        operator.setResult(result);
+
+        return operatorRepository.save(operator);
+    }
+
+    // Post Subtraction
+    public Operator postSubtractionOperator(Operator operator) throws Exception {
+
+        int firstNumber = operator.getFirstNumber();
+        int secondNumber = operator.getSecondNumber();
+        int result = firstNumber - secondNumber;
 
         operator.setResult(result);
 
