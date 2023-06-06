@@ -19,9 +19,9 @@ public class OperatorService {
     // Post Addition
     public Operator postAdditionOperator(Operator operator) throws Exception {
 
-        int numero1 = operator.getFirstNumber();
-        int numero2 = operator.getSecondNumber();
-        int result = numero1 + numero2;
+        double firstNumber = operator.getFirstNumber();
+        double secondNumber = operator.getSecondNumber();
+        double result = firstNumber + secondNumber;
 
         operator.setResult(result);
 
@@ -31,9 +31,33 @@ public class OperatorService {
     // Post Subtraction
     public Operator postSubtractionOperator(Operator operator) throws Exception {
 
-        int firstNumber = operator.getFirstNumber();
-        int secondNumber = operator.getSecondNumber();
-        int result = firstNumber - secondNumber;
+        double firstNumber = operator.getFirstNumber();
+        double secondNumber = operator.getSecondNumber();
+        double result = firstNumber - secondNumber;
+
+        operator.setResult(result);
+
+        return operatorRepository.save(operator);
+    }
+
+    // Post division
+    public Operator postDivisionOperator(Operator operator) throws Exception {
+
+        double firstNumber = operator.getFirstNumber();
+        double secondNumber = operator.getSecondNumber();
+        double result = firstNumber / secondNumber;
+
+        operator.setResult(result);
+
+        return  operatorRepository.save(operator);
+    }
+
+    // Post multiplication
+    public Operator postMultiplicationOperator(Operator operator) throws Exception {
+
+        double firstNumber = operator.getFirstNumber();
+        double secondNumber = operator.getSecondNumber();
+        double result = firstNumber * secondNumber;
 
         operator.setResult(result);
 

@@ -10,14 +10,15 @@ public class Operator {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private int firstNumber;
+    private double firstNumber;
 
-    private int secondNumber;
+    private double secondNumber;
     private String operatorType;
 
-    private int result;
+    private double result;
 
     // getter y setter
+
     public int getId() {
         return id;
     }
@@ -26,19 +27,19 @@ public class Operator {
         this.id = id;
     }
 
-    public int getFirstNumber() {
+    public double getFirstNumber() {
         return firstNumber;
     }
 
-    public void setFirstNumber(int firstNumber) {
+    public void setFirstNumber(double firstNumber) {
         this.firstNumber = firstNumber;
     }
 
-    public int getSecondNumber() {
+    public double getSecondNumber() {
         return secondNumber;
     }
 
-    public void setSecondNumber(int secondNumber) {
+    public void setSecondNumber(double secondNumber) {
         this.secondNumber = secondNumber;
     }
 
@@ -50,13 +51,14 @@ public class Operator {
         this.operatorType = operatorType;
     }
 
-    public int getResult() {
+    public double getResult() {
         return result;
     }
 
-    public void setResult(int result) {
+    public void setResult(double result) {
         this.result = result;
     }
+
 
     // tostring
 
