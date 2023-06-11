@@ -43,7 +43,7 @@ public class ClientController {
     public ResponseEntity<Object> getClient (@PathVariable() int id) {
         try {
             System.out.println(id);
-            Optional<Client> clientFound = clientService.getClient(id);
+            Client clientFound = clientService.getClient(id);
             return ResponseHandler.generateResponse("Client retrieved", HttpStatus.OK, clientFound);
         } catch (Exception e) {
             return ResponseHandler.generateResponse(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR, null);

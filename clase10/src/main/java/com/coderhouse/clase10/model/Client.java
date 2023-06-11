@@ -11,8 +11,14 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private String lastname;
+
+    @Column(nullable = false, unique = true)
     private String docnumber;
 
     @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
@@ -67,7 +73,6 @@ public class Client {
                 ", name='" + name + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", docnumber='" + docnumber + '\'' +
-                ", invoice=" + invoice +
                 '}';
     }
 }

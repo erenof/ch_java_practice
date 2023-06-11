@@ -1,20 +1,25 @@
 package com.coderhouse.clase10.model;
 
+import java.util.List;
+
 //Esta clase no tiene el anotation @Entity porque esto no es una tabla, es un objeto oque lo vamos a usar de forma
 //eterea para mapear la request
 public class RequestInvoice {
 
     private int client_id;
 
-    //Luego añadiremos los invoice details
-    private String otra_prop;
+    //Listado de detalles (id producto y su cantidad)
+    private List<RequestProductDetail> product_list;
 
-    public RequestInvoice(int client_id, String otra_prop){
+
+    public RequestInvoice(int client_id, List<RequestProductDetail> product_list){
         this.client_id = client_id;
-        this.otra_prop = otra_prop;
+        this.product_list = product_list;
     }
 
     //getters y setters
+
+
     public int getClient_id() {
         return client_id;
     }
@@ -23,20 +28,21 @@ public class RequestInvoice {
         this.client_id = client_id;
     }
 
-    public String getOtra_prop() {
-        return otra_prop;
+    public List<RequestProductDetail> getProduct_list() {
+        return product_list;
     }
 
-    public void setOtra_prop(String otra_prop) {
-        this.otra_prop = otra_prop;
+    public void setProduct_list(List<RequestProductDetail> product_list) {
+        this.product_list = product_list;
     }
 
     //tostring
+
     @Override
     public String toString() {
         return "RequestInvoice{" +
                 "client_id=" + client_id +
-                ", otra_prop='" + otra_prop + '\'' +
+                ", product_list=" + product_list +
                 '}';
     }
 }

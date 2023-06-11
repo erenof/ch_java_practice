@@ -23,6 +23,7 @@ public class InvoiceController {
     public ResponseEntity<Object> postInvoice (@RequestBody RequestInvoice reqInvoice) {
         try {
             System.out.println(reqInvoice);
+            // Genera comprobante
             InvoiceDTO data = invoiceService.postInvoice(reqInvoice);
             return ResponseHandler.generateResponse(
                     "Invoice created successfully",

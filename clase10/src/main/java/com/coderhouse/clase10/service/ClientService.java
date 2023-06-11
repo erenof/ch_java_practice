@@ -16,12 +16,17 @@ public class ClientService {
         return clientRepository.save(client);
     }
 
-    public Optional<Client> getClient(int id) throws Exception {
+    public Client getClient(int id) throws Exception {
         Optional<Client> client = clientRepository.findById(id);
         if(client.isEmpty()){
-            return null;
+            throw new Exception("Client with id: " + id + ", not found");
         } else {
-            return Optional.of(client.get());
+            return client.get();
         }
+    }
+
+    public boolean clientExist (int id) throws Exception {
+        Optional<Client> client = clientRepository.findById(id);
+        return client.isPresent();
     }
 }

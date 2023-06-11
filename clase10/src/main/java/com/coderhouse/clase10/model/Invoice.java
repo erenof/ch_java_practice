@@ -2,6 +2,8 @@ package com.coderhouse.clase10.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "invoice")
 public class Invoice {
@@ -12,10 +14,14 @@ public class Invoice {
 
     @ManyToOne
     private Client client;
+
+    @OneToMany(mappedBy = "invoice")
+    private List<InvoiceDetail> invoiceDetails;
     private String created_at;
     private double total;
 
     //getter y setter
+
     public int getId() {
         return id;
     }
@@ -30,6 +36,14 @@ public class Invoice {
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public List<InvoiceDetail> getInvoiceDetails() {
+        return invoiceDetails;
+    }
+
+    public void setInvoiceDetails(List<InvoiceDetail> invoiceDetails) {
+        this.invoiceDetails = invoiceDetails;
     }
 
     public String getCreated_at() {
@@ -47,6 +61,7 @@ public class Invoice {
     public void setTotal(double total) {
         this.total = total;
     }
+
 
     // tostring
 
